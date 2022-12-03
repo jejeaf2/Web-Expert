@@ -1,5 +1,5 @@
 import 'regenerator-runtime'; /* for async await transpile */
-import '../styles/main.css';
+import '../styles/main2.css';
 
 import('../DATA.json').then(({default:jsonData}) => {
     console.log(jsonData)

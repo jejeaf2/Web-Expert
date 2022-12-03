@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+  }
+  
+  body {border: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    outline: 0;
+    padding: 0; 
+    width: 100%;
+    height: 100%;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .brand a {
+    color: white;
+    padding: 1rem;
+    font-size: larger;
+    font-weight: bold;
+  }
+  .sidebar li a {
+    padding: 1rem;
+    color: white;
+  }
+  .list_restaurant_title a {
+    padding: 1rem;
+  }
+  .list_restaurant_rating a {
+    padding: 1.2rem;
+  }
+  .list_restaurant_img {
+    padding-top: 2rem;
+    max-width: 300px;
+  }
+  
+  /* burger icon */
+  
+  .burger {
+    display: inline-block;
+    cursor: pointer;
+    z-index: 2;
+    background-color: transparent;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 44px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+    border-radius: 5px;
+    /* min-width: 44px;
+    min-height: 44px; */
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+    background-color: white;
+  }
+  
+  .change .bar2 {opacity: 0;   background-color: white;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+      background-color: white;
+  }
+  
+  .container-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav {
+    padding: 10px 20px;
+    box-shadow: 1px 2px 10px 2px rgba(0,0,0,.1);
+    background-color: #2B7A0B;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .bg-sidebar {
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    background: rgba(0,0,0,.1);
+    transition: .3s;
+    visibility: hidden;
+  }
+  
+  .bg-sidebar.change {
+    right: 0;
+    visibility: visible;
+    display: block;
+  }
+  
+  nav ul {
+      display: flex;
+      position: fixed;    
+      background-color:#505050;
+      top: 0;
+      bottom: 0;
+      right: -300px;
+      width: 300px;
+      transition: .5s;
+      align-items: flex-start;
+      flex-direction: column;
+  }
+  
+  nav ul.change {
+      right: 0;
+      transition: .5s;
+  }
+  
+  nav ul li {
+    list-style: none;
+    padding: 20px 15px;
+  }
+  
+    /*
+     * Jumbotron
+     */
+    
+     .hero {
+      background-image: url(../public/images/heros/hero-image_2.jpg);
+      display: flex;
+      margin: auto;
+      height: 25rem;
+      background-repeat: no-repeat;
+      max-width: 1000px;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .hero__inner {
+      margin: 0 auto;
+      max-width: 800px;
+    }
+    
+    .hero__title {
+      color: #fff;
+      font-weight: 500;
+      font-size: 36px;
+    }
+    
+    .hero__tagline {
+      color: #fff;
+      margin-top: 16px;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  
+  /* main */
+    
+     main {
+      width: 70%;
+      margin: 0 auto;
+    }
+    
+    /* content */
+    
+    .content {
+        padding: 5px
+      }
+    
+    /* headline */
+    
+    .headline {
+      color: black;
+        width: 100%;
+        margin-top: 30px;
+        text-align: center
+    }
+    .headline h1 {
+        font-weight: 700;
+        font-size: 1.8em;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .list {
+        margin: 32px auto auto;
+        text-align: left;
+        display: grid;
+        grid-row-gap: 16px;
+    }
+    .list_restaurant {
+      box-shadow: 0 3px 6px 0 rgb(0, 0, 0);
+        width: 100%;
+      margin: 12px;
+      background-color: whitesmoke;
+        border-radius: 5px;
+      text-align: center;
+        overflow: hidden;
+        position: relative
+    }
+    .city {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+        border-radius: 5px;
+        background-color: #2B7A0B;
+        padding: 5px 10px 5px;
+        color: white;
+        font-weight: 500
+    }
+    .list_restaurant_content {
+        padding: 16px
+    }
+    .list_restaurant_img {
+        width: 75%;
+        max-height: 200px;
+    }
+    .list_restaurant_rating {
+        font-size: 12px;
+        text-transform: uppercase;
+        color: black;
+        font-weight: 500;
+    }
+    .list_rating {
+        color: red;
+        text-decoration: none
+    }
+    
+    .list_restaurant_title {
+        font-weight: 500;
+        font-size: 16px;
+        margin-top: 10px;
+        transition: 0.3s opacity
+    }
+    .list_restaurant_title:hover {
+        opacity: 0.5
+    }
+  
+    .list_restaurant_desc {
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 1.5em
+    }
+  
+    /* Skip to Content */
+  
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #bf1722;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+  }
+   
+  .skip-link:focus {
+     top: 0;
+  }
+    
+    /*
+     * footer
+     */
+    
+     footer {
+      background-color: #2B7A0B;
+        color: white;
+      font-weight: 500;
+        font-size: 14px;
+        padding: 1.5em;
+        width: 100%;
+        text-align: center
+    }
+    
+  
+  @media screen and (min-width: 960px) {
+  
+    .bg-sidebar.change {
+     right: 0;
+     visibility: hidden;
+     display: none;
+    }
+  
+    .burger {
+      display: none;
+    }
+  
+    nav {
+      position: relative;
+    }
+  
+    nav ul {
+      display: flex;
+        position: relative;    
+        background-color:unset;
+        top: unset;
+        bottom: unset;
+        right: unset;
+        width: unset;
+        flex-direction: row;
+    }
+  
+    nav ul li {
+      padding: 10px 15px;
+  
+    }
+  
+    nav ul li:hover::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 3px;
+      transition: .3s;
+      background-color: black;
+      transform: translateY(20px);
+    }
+  
+    nav ul li:last-child {
+      font-weight: 550;
+    }
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .container-flex {
+     width: 100%;
+     max-width: 1024px;
+     margin: auto;
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+  }
+  
+  @media screen and (min-width: 700px) {
+    .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 16px;
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+      .list {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr
+      }
+  }
