@@ -1,41 +1,34 @@
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import 'regenerator-runtime'; /* for async await transpile */
-import '../styles/main2.css';
+import '../styles/main.css';
+import App from './views/app';
+import swRegister from './utils/sw-register';
 
-import('../DATA.json').then(({default:jsonData}) => {
-    console.log(jsonData)
-    let datas = jsonData['restaurants']
-    let dataList = '';
-    datas.forEach(function(data) {
-        dataList +=`
-        <div class="list_restaurant">
-            <div class="city">${data['city']}</div>
-            <img class="list_restaurant_img" src="${data['pictureId']}" alt="${data['name']}" title="${data['name']}">
-            <div class="list_restaurant_content">
-                <p class="list_restaurant_rating">
-                    Rating : 
-                    <a class="list_rating">${data['rating']}</a>
-                </p>
-                <h1 class="list_restaurant_title"><a href="#">${data['name']}</a></h1>
-                <div class="list_restaurant_desc">${data['description'].slice(0, 200)}...</div>
-            </div>
-        </div>
-        `;
-    });
-    document.querySelector('#restaurant').innerHTML = dataList;  
+const hamburgerButtonElement = document.querySelector('#hamburger');
+const drawerElement = document.querySelector('#drawer');
+const mainElement = document.querySelector('main');
+
+const app = new App({
+  content: mainElement,
 });
 
-const burger = document.querySelector('.burger')
-const sidebar = document.querySelector('.sidebar')
-const bgSidebar = document.querySelector('.bg-sidebar')
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
 
-burger.addEventListener('click', function() {
-  this.classList.toggle('change')
-  sidebar.classList.toggle('change')
-  bgSidebar.classList.toggle('change')
-})
+window.addEventListener('load', () => {
+  app.renderPage();
+  swRegister();
+});
 
-bgSidebar.addEventListener('click', function() {
-  this.classList.remove('change')
-  sidebar.classList.remove('change')
-  burger.classList.remove('change')
-})
+hamburgerButtonElement.addEventListener('click', (event) => {
+  drawerElement.classList.toggle('open');
+  event.stopPropagation();
+  event.preventDefault();
+});
+
+mainElement.addEventListener('click', (event) => {
+  drawerElement.classList.remove('open');
+  event.stopPropagation();
+});
