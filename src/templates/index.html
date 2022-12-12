@@ -1,54 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
-
-  <title>Culinary App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplikasi untuk mencari Restaurant">
+    <meta name="theme-color" content="#203239"/>
+    <title>Restaurant Apps Starter Project</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
 </head>
 <body>
-  <a href="#maincontent" class="skip-link">Skip to content ?</a>
-  <div class="wrapper">
-    <nav>
-      <div class="container-flex">
-        <div class="brand">
-            <a href="">Culinary App</a>
-         </div>
-         <button class="burger">
-            <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-         </button>
-         <div class="bg-sidebar"></div>
-         <ul class="sidebar">
-          <li><a href="/">Home</a></li>
-          <li><a href="#">Favorite</a></li>
-          <li><a target="_blank" href="https://github.com/jejeaf2">About Us</a></li>
-         </ul>
-      </div>
-    </nav>
-  </div>
-
-  <div class="hero">
-    <div class="hero__inner">
-      <h1 class="hero__title">Welcome To Culinary App!!!</h1>
-      <p class="hero__tagline">Tersedia berbagai macam culinary untuk referensi kamu</p>
+<button href="#maincontent" class="skip-link">Menuju ke Konten</button>
+<div id="hamburger-container"><a id="hamburger" aria-label="menu" href="#">☰</a></div>
+<nav id="drawer">
+    <div class="logo">
+        <h1>KitaSuka</h1>
     </div>
-  </div>
-  <main id="maincontent">
-    <section class="content">
-        <div class="headline">
-            <h1 class="title_up">Your Reference Resto</h1>
-            <div class="list" id="restaurant"></div>
-        </div>
-    </section>
-</main>
-<!-- Footer -->
+    <ul class="menu">
+        <li><a href="#/">Home</a></li>
+        <li><a href="#/favorite">Favorite</a></li>
+        <li><a href="https://www.instagram.com/javas_f/">About Us</a></li>
+    </ul>
+</nav>
+<main id="maincontent" tabindex="0"></main>
 <footer>
-    <p>Copyright © 2022 - Culinary App</p>
+    <div>Copyright © 2022 - KitaSuka</div>
 </footer>
 </body>
 </html>
